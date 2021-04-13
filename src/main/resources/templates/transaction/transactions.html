@@ -32,11 +32,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/customers">Customer List</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/books">Book List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/transactions">Transaction List</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+							aria-expanded="false">Books</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdown01">
+							<li><a class="dropdown-item" href="/books">All</a></li>
+							<li><a class="dropdown-item" href="/books/available">Available</a></li>
+                            <li><a class="dropdown-item" href="/books/in_use">In Use</a></li>
+                        </ul>
+					</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                            aria-expanded="false">Transactions</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="/transactions">All</a></li>
+                            <li>
+                                <a class="dropdown-item" href="/transactions/check_in">Check In</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/transactions/check_out">Check Out</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
@@ -63,19 +79,21 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Customer Id</th>
-						<th>Book Id</th>
+						<th>Customer</th>
+						<th>Book</th>
+						<th>Author</th>
 						<th>Transaction Date</th>
 						<th>Type</th>
 					</tr>
                 </thead>
                 <tbody>
 					<tr th:each="transaction:${transactions}">
-						<td th:text="${transaction.transactionId}">Id</td>
-						<td th:text="${transaction.customerId}">Customer Id</td>
-						<td th:text="${transaction.bookId}">Book Id</td>
-						<td th:text="${transaction.trxnDate}">Borrow Date</td>
-						<td th:text="${transaction.trxnType}">Transaction Type</td>
+						<td th:text="${transaction.id}">Id</td>
+						<td th:text="${transaction.getCustomerFullName()}">Customer Id</td>
+						<td th:text="${transaction.bookTitle}">Book Id</td>
+						<td th:text="${transaction.getAuthorFullName()}">Customer Id</td>
+						<td th:text="${transaction.transactionDate}">Borrow Date</td>
+						<td th:text="${transaction.transactionType}">Transaction Type</td>
 					</tr>
                 </tbody>
             </table>

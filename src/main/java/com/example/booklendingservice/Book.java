@@ -21,9 +21,12 @@ public class Book {
 	private String phone;
 	@Column(name="rating")
 	private int rating;
+	@Column(name="isavailable")
+	private boolean isAvailable;
 	
 	public Book() {
 		super();
+		this.isAvailable = true;
 	}
 	public Book(
 			String title
@@ -37,6 +40,7 @@ public class Book {
 		this.authorFirstName = authorFirstName;
 		this.phone = phone;
 		this.rating = rating;
+		this.isAvailable = true;
 	}
 	public int getBookId() {
 		return bookId;
@@ -74,4 +78,11 @@ public class Book {
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
+	public boolean isAvailable() {
+		return isAvailable;
+	}
+	public void setAvailable(boolean isAvailable) {
+		this.isAvailable = isAvailable;
+	}
+	
 }

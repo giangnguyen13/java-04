@@ -44,6 +44,20 @@ public class BookController {
         model.addAttribute("books", bookRepository.findAll());
         return "book/books";
     }
+	
+	@GetMapping(value = "/books/available")
+    public String showAvailableBooks(Model model)
+    {
+        model.addAttribute("books", bookRepository.findAvailableBooks());
+        return "book/books";
+    }
+	
+	@GetMapping(value = "/books/in_use")
+    public String showInUseBooks(Model model)
+    {
+        model.addAttribute("books", bookRepository.findInUseBooks());
+        return "book/books";
+    }
 }
 
 

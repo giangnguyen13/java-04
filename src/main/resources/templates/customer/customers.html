@@ -32,11 +32,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/customers">Customer List</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/books">Book List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/transactions">Transaction List</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+							aria-expanded="false">Books</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdown01">
+							<li><a class="dropdown-item" href="/books">All</a></li>
+							<li><a class="dropdown-item" href="/books/available">Available</a></li>
+                            <li><a class="dropdown-item" href="/books/in_use">In Use</a></li>
+                        </ul>
+					</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                            aria-expanded="false">Transactions</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="/transactions">All</a></li>
+                            <li>
+                                <a class="dropdown-item" href="/transactions/check_in">Check In</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/transactions/check_out">Check Out</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
