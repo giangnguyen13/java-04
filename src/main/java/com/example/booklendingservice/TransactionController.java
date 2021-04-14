@@ -25,7 +25,7 @@ public class TransactionController {
 	public String renderAddTransaction(Model model)
 	{
 		model.addAttribute("customers", customerRepository.findAll());
-		model.addAttribute("books", bookRepository.findAll());
+		model.addAttribute("books", bookRepository.findAvailableBooks());
 		return "transaction/add_transaction";
 	}
 		
